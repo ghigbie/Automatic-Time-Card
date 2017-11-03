@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AutoTimeCard</string>
-    <string name="description">This app will automatically track your time on the
-        job based on a clock-in location that you set</string>
+    <string name="description">Automatically track your time on the
+        job based on a clock-in location set by you</string>
     <string name="set_location">Set Clock In Location</string>
     <string name="see_time_history">See Time History</string>
     <string name="change_location">Change Clock In Location</string>

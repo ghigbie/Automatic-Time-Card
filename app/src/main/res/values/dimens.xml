@@ -4,4 +4,5 @@
     <dimen name="buttonBorderStroke">2dp</dimen>
     <dimen name="textMargin">16dp</dimen>
     <dimen name="buttonMargins">10dp</dimen>
+    <dimen name="textDescriptionSize">26sp</dimen>
 </resources>
