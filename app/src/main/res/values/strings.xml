@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AutoTimeCard</string>
+    <string name="set_location">Set Clock In Location</string>
+    <string name="see_time_history">See Time History</string>
+    <string name="change_location">Change Clock In Location</string>
+    <string name="background_image_description">Background Image</string>
+    <string name="background_overlay_gray">Gray Background Overlay</string>
 </resources>
