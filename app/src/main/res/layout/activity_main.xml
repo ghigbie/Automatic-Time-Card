@@ -7,6 +7,7 @@
     tools:context="com.georgehigbie.autotimecard.MainActivity">
 
     <ImageView
+        android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/background_image_description"
@@ -18,6 +19,7 @@
         app:srcCompat="@drawable/time_card" />
 
     <ImageView
+        android:id="@+id/overlayImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/background_overlay_gray"
@@ -29,7 +31,7 @@
         app:srcCompat="@drawable/transparent_overlay" />
 
     <TextView
-        android:id="@+id/description"
+        android:id="@+id/descriptionText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/textMargin"
@@ -45,7 +47,7 @@
 
 
     <Button
-        android:id="@+id/setLocation"
+        android:id="@+id/setLocationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -53,12 +55,12 @@
         android:background="@drawable/custom_button"
         android:text="@string/set_location"
         android:textColor="@color/buttonTextColor"
-        app:layout_constraintBottom_toTopOf="@id/changeLocation"
+        app:layout_constraintBottom_toTopOf="@id/changeLocationButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/changeLocation"
+        android:id="@+id/changeLocationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -66,12 +68,12 @@
         android:background="@drawable/custom_button"
         android:text="@string/change_location"
         android:textColor="@color/buttonTextColor"
-        app:layout_constraintBottom_toTopOf="@id/seeTimeCard"
+        app:layout_constraintBottom_toTopOf="@id/seeTimeCardButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/seeTimeCard"
+        android:id="@+id/seeTimeCardButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
