@@ -7,4 +7,5 @@
     <string name="change_location">Change Clock In Location</string>
     <string name="background_image_description">Background Image</string>
     <string name="background_overlay_gray">Gray Background Overlay</string>
+    <string name="title_activity_time_card">TimeCard</string>
 </resources>
