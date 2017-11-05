@@ -6,6 +6,7 @@ import android.location.LocationManager
 import android.os.Bundle
 import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,9 +24,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun setButtonVisibility(){ //this should set the visibility of a button if location is set
+    /*** This sets the visibility of the buttons if location is set or not set ***/
+    fun setButtonVisibility(){ //sets the visibility of a button if location is set
         if(locationSet == false){
-
+            setLocationButton.visibility = View.VISIBLE
+        }else{
+            changeLocationButton.visibility = View.VISIBLE
         }
     }
 
@@ -35,8 +39,6 @@ class MainActivity : AppCompatActivity() {
             locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
 
             var locationSet: Boolean = true
-            appSettings = this.getSharedPreferences(com.georgehigbie.autotimecard.SHARED_PREFS_FILENAME, )
-
             val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
             val editor: SharedPreferences.Editor = sharedPreferences.edit()
             editor.putBoolean(LOCATION_SET, locationSet)
