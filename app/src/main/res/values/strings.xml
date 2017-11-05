@@ -8,4 +8,5 @@
     <string name="background_image_description">Background Image</string>
     <string name="background_overlay_gray">Gray Background Overlay</string>
     <string name="title_activity_time_card">TimeCard</string>
+    <string name="timeCard">Below is your time card history:</string>
 </resources>
