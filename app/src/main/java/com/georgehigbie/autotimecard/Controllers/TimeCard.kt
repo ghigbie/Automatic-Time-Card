@@ -6,6 +6,8 @@ import com.georgehigbie.autotimecard.R
 
 class TimeCard : AppCompatActivity() {
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_time_card)
