@@ -9,4 +9,7 @@
     <string name="background_overlay_gray">Gray Background Overlay</string>
     <string name="title_activity_time_card">TimeCard</string>
     <string name="timeCard">Below is your time card history:</string>
+    <string name="total_time">Total Time</string>
+    <string name="time_out">Time Out</string>
+    <string name="time_in">Time In</string>
 </resources>
