@@ -13,9 +13,9 @@
             android:layout_row="0"
             android:layout_column="0"
             android:text="Monday, June 25"
-            android:paddingTop="2dp"
-            android:paddingBottom="2dp"
-            android:paddingEnd="16dp"
+            android:paddingTop="@dimen/gridPaddingTop"
+            android:paddingBottom="@dimen/gridPaddingBottom"
+            android:paddingEnd="@dimen/gridPaddingEnd"
             android:paddingStart="8dp"
             />
 
