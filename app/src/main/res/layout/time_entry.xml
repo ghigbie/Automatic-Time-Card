@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <GridLayout
         android:layout_width="match_parent"
@@ -39,6 +40,15 @@
             android:paddingStart="@dimen/gridPaddingStart"/>
 
         <TextView
+            android:layout_row="0"
+            android:layout_column="3"
+            android:text="Total Time"
+            android:paddingTop="@dimen/gridPaddingTop"
+            android:paddingBottom="@dimen/gridPaddingBottom"
+            android:paddingEnd="@dimen/gridPaddingEnd"
+            android:paddingStart="@dimen/gridPaddingStart"/>
+
+        <TextView
             android:layout_row="1"
             android:layout_column="1"
             android:text="8:00AM"
@@ -50,7 +60,16 @@
         <TextView
             android:layout_row="1"
             android:layout_column="2"
-            android:text="5:00PM"
+            tools:text="5:00PM"
+            android:paddingTop="@dimen/gridPaddingTop"
+            android:paddingBottom="@dimen/gridPaddingBottom"
+            android:paddingEnd="@dimen/gridPaddingEnd"
+            android:paddingStart="@dimen/gridPaddingStart"/>
+
+        <TextView
+            android:layout_row="1"
+            android:layout_column="3"
+            tools:text="4 hours"
             android:paddingTop="@dimen/gridPaddingTop"
             android:paddingBottom="@dimen/gridPaddingBottom"
             android:paddingEnd="@dimen/gridPaddingEnd"
