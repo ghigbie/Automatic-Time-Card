@@ -1,86 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:rowCount="2"
-        android:columnCount="4">
+        android:columnCount="4"
+        android:rowCount="2">
 
         <TextView
             android:id="@+id/dayAndDateText"
-            android:layout_row="0"
             android:layout_column="0"
-            tools:text="Monday, June 25"
-            android:paddingTop="@dimen/gridPaddingTop"
+            android:layout_row="0"
             android:paddingBottom="@dimen/gridPaddingBottom"
             android:paddingEnd="@dimen/gridPaddingEnd"
             android:paddingStart="@dimen/gridPaddingStart"
-            />
+            android:paddingTop="@dimen/gridPaddingTop"
+            tools:text="Monday, June 25" />
 
         <TextView
             android:id="@+id/timeInDescriptionText"
-            android:layout_row="0"
             android:layout_column="1"
-            android:text="@string/time_in"
-            android:paddingTop="@dimen/gridPaddingTop"
+            android:layout_row="0"
             android:paddingBottom="@dimen/gridPaddingBottom"
             android:paddingEnd="@dimen/gridPaddingEnd"
             android:paddingStart="@dimen/gridPaddingStart"
-            />
+            android:paddingTop="@dimen/gridPaddingTop"
+            android:text="@string/time_in" />
 
         <TextView
             android:id="@+id/timeOutDescriptionText"
-            android:layout_row="0"
             android:layout_column="2"
-            android:text="@string/time_out"
-            android:paddingTop="@dimen/gridPaddingTop"
+            android:layout_row="0"
             android:paddingBottom="@dimen/gridPaddingBottom"
             android:paddingEnd="@dimen/gridPaddingEnd"
-            android:paddingStart="@dimen/gridPaddingStart"/>
+            android:paddingStart="@dimen/gridPaddingStart"
+            android:paddingTop="@dimen/gridPaddingTop"
+            android:text="@string/time_out" />
 
         <TextView
             android:id="@+id/timeTotalDescriptionText"
-            android:layout_row="0"
             android:layout_column="3"
-            android:text="@string/total_time"
-            android:paddingTop="@dimen/gridPaddingTop"
+            android:layout_row="0"
             android:paddingBottom="@dimen/gridPaddingBottom"
             android:paddingEnd="@dimen/gridPaddingEnd"
-            android:paddingStart="@dimen/gridPaddingStart"/>
+            android:paddingStart="@dimen/gridPaddingStart"
+            android:paddingTop="@dimen/gridPaddingTop"
+            android:text="@string/total_time" />
 
         <TextView
             android:id="@+id/timeInText"
-            android:layout_row="1"
             android:layout_column="1"
-            tools:text="8:00AM"
-            android:paddingTop="@dimen/gridPaddingTop"
+            android:layout_row="1"
             android:paddingBottom="@dimen/gridPaddingBottom"
             android:paddingEnd="@dimen/gridPaddingEnd"
-            android:paddingStart="@dimen/gridPaddingStart"/>
+            android:paddingStart="@dimen/gridPaddingStart"
+            android:paddingTop="@dimen/gridPaddingTop"
+            tools:text="8:00AM" />
 
         <TextView
             android:id="@+id/timeOutText"
-            android:layout_row="1"
             android:layout_column="2"
-            tools:text="5:00PM"
-            android:paddingTop="@dimen/gridPaddingTop"
+            android:layout_row="1"
             android:paddingBottom="@dimen/gridPaddingBottom"
             android:paddingEnd="@dimen/gridPaddingEnd"
-            android:paddingStart="@dimen/gridPaddingStart"/>
+            android:paddingStart="@dimen/gridPaddingStart"
+            android:paddingTop="@dimen/gridPaddingTop"
+            tools:text="5:00PM" />
 
         <TextView
             android:id="@+id/timeTotalText"
-            android:layout_row="1"
             android:layout_column="3"
-            tools:text="4 hours"
-            android:paddingTop="@dimen/gridPaddingTop"
+            android:layout_row="1"
             android:paddingBottom="@dimen/gridPaddingBottom"
             android:paddingEnd="@dimen/gridPaddingEnd"
-            android:paddingStart="@dimen/gridPaddingStart"/>
+            android:paddingStart="@dimen/gridPaddingStart"
+            android:paddingTop="@dimen/gridPaddingTop"
+            tools:text="4 hours" />
 
     </GridLayout>
 
