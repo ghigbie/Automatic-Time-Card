@@ -62,4 +62,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(timeCardIntent)
         }
     }
+
+    fun MakeVolleyRequest(){
+
+    }
 }
