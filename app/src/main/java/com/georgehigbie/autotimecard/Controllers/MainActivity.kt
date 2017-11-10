@@ -1,24 +1,25 @@
 package com.georgehigbie.autotimecard.Controllers
 
-import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.location.LocationManager
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
-import com.georgehigbie.autotimecard.LOCATION_SET
 import com.georgehigbie.autotimecard.R
+import com.google.android.gms.location.LocationRequest
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private var locationManager: LocationManager? = null
+    private var locationRequest: LocationRequest? = null
     private var appSettings: SharedPreferences? = null
     private var locationSet: Boolean = false
     private lateinit var testingText: TextView
+    private val UPDATE_INTERVAL: Long = 10 * 1000 //good idea for now
+    private val FASTEST_INTERVAL: Long = 2000 //good idea for now
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,15 +42,22 @@ class MainActivity : AppCompatActivity() {
 
 
     fun getLocation() { //This should be called by setLocationButton and changeLocationButton
-        if(locationManager == null) {
-            locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
+//        if(locationManager == null) {
+//            locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
+//
+//            var locationSet: Boolean = true
+//            val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
+//            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+//            editor.putBoolean(LOCATION_SET, locationSet)
+//
+//        }
 
-            var locationSet: Boolean = true
-            val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-            val editor: SharedPreferences.Editor = sharedPreferences.edit()
-            editor.putBoolean(LOCATION_SET, locationSet)
+        locationRequest = LocationRequest()
+        locationRequest!!.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        locationRequest!!.interval = UPDATE_INTERVAL
+        locationRequest!!.fastestInterval = FASTEST_INTERVAL
 
-        }
+
     }
 
     fun setOnClickListeners(){
