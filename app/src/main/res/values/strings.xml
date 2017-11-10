@@ -12,4 +12,5 @@
     <string name="total_time">Total Time</string>
     <string name="time_out">Time Out</string>
     <string name="time_in">Time In</string>
+    <string name="testingText">Testing Text</string>
 </resources>
