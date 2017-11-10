@@ -10,4 +10,5 @@
     <dimen name="gridPaddingBottom">2dp</dimen>
     <dimen name="gridPaddingEnd">16dp</dimen>
     <dimen name="gridPaddingStart">8dp</dimen>
+    <dimen name="gridTextSize">16sp</dimen>
 </resources>
