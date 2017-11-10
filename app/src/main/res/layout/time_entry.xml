@@ -31,6 +31,9 @@
             android:paddingEnd="@dimen/gridPaddingEnd"
             android:paddingStart="@dimen/gridPaddingStart"
             android:paddingTop="@dimen/gridPaddingTop"
+            android:textSize="@dimen/gridTextSize"
+            android:textColor="@color/gridTextColor"
+            android:textStyle="bold"
             android:text="@string/time_in" />
 
         <TextView
@@ -41,6 +44,9 @@
             android:paddingEnd="@dimen/gridPaddingEnd"
             android:paddingStart="@dimen/gridPaddingStart"
             android:paddingTop="@dimen/gridPaddingTop"
+            android:textSize="@dimen/gridTextSize"
+            android:textColor="@color/gridTextColor"
+            android:textStyle="bold"
             android:text="@string/time_out" />
 
         <TextView
@@ -51,6 +57,9 @@
             android:paddingEnd="@dimen/gridPaddingEnd"
             android:paddingStart="@dimen/gridPaddingStart"
             android:paddingTop="@dimen/gridPaddingTop"
+            android:textSize="@dimen/gridTextSize"
+            android:textColor="@color/gridTextColor"
+            android:textStyle="bold"
             android:text="@string/total_time" />
 
         <TextView
@@ -61,6 +70,9 @@
             android:paddingEnd="@dimen/gridPaddingEnd"
             android:paddingStart="@dimen/gridPaddingStart"
             android:paddingTop="@dimen/gridPaddingTop"
+            android:textSize="@dimen/gridTextSize"
+            android:textColor="@color/gridTextColor"
+            android:textStyle="bold"
             tools:text="8:00AM" />
 
         <TextView
@@ -71,6 +83,9 @@
             android:paddingEnd="@dimen/gridPaddingEnd"
             android:paddingStart="@dimen/gridPaddingStart"
             android:paddingTop="@dimen/gridPaddingTop"
+            android:textSize="@dimen/gridTextSize"
+            android:textColor="@color/gridTextColor"
+            android:textStyle="bold"
             tools:text="5:00PM" />
 
         <TextView
@@ -81,6 +96,9 @@
             android:paddingEnd="@dimen/gridPaddingEnd"
             android:paddingStart="@dimen/gridPaddingStart"
             android:paddingTop="@dimen/gridPaddingTop"
+            android:textSize="@dimen/gridTextSize"
+            android:textColor="@color/gridTextColor"
+            android:textStyle="bold"
             tools:text="4 hours" />
 
     </GridLayout>

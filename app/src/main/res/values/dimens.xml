@@ -8,7 +8,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="gridPaddingTop">2dp</dimen>
     <dimen name="gridPaddingBottom">2dp</dimen>
-    <dimen name="gridPaddingEnd">16dp</dimen>
-    <dimen name="gridPaddingStart">8dp</dimen>
+    <dimen name="gridPaddingEnd">10dp</dimen>
+    <dimen name="gridPaddingStart">4dp</dimen>
     <dimen name="gridTextSize">16sp</dimen>
 </resources>
