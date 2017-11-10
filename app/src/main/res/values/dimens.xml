@@ -13,4 +13,5 @@
     <dimen name="gridTextSize">16sp</dimen>
     <dimen name="gridMarginTop">4dp</dimen>
     <dimen name="gridMarginBottom">4dp</dimen>
+    <dimen name="timeEntryHeight">70dp</dimen>
 </resources>
