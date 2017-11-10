@@ -19,7 +19,8 @@
             android:paddingStart="@dimen/gridPaddingStart"
             android:paddingTop="@dimen/gridPaddingTop"
             android:textSize="@dimen/gridTextSize"
-            android:textColor="@color/b"
+            android:textColor="@color/gridTextColor"
+            android:textStyle="bold"
             tools:text="Monday, June 25" />
 
         <TextView
