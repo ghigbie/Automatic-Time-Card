@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     private val UPDATE_INTERVAL: Long = 10 * 1000 //good idea for now
     private val FASTEST_INTERVAL: Long = 2000 //good idea for now
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,21 +43,12 @@ class MainActivity : AppCompatActivity() {
 
 
     fun getLocation() { //This should be called by setLocationButton and changeLocationButton
-//        if(locationManager == null) {
-//            locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
-//
-//            var locationSet: Boolean = true
-//            val sharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
-//            val editor: SharedPreferences.Editor = sharedPreferences.edit()
-//            editor.putBoolean(LOCATION_SET, locationSet)
-//
-//        }
-
         locationRequest = LocationRequest()
         locationRequest!!.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-        locationRequest!!.interval = UPDATE_INTERVAL
-        locationRequest!!.fastestInterval = FASTEST_INTERVAL
 
+    }
+
+    fun getLocationUpdates(){
 
     }
 
@@ -82,3 +74,4 @@ class MainActivity : AppCompatActivity() {
 
     }
 }
+
