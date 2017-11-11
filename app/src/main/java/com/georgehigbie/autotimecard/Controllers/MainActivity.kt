@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         try {
             locationManager?.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener)
         }catch (ex: SecurityException){
-            Log.d("TAG", "Security Exception, no location available")
+            Log.d("PROBLEM!!! :", "Security Exception, no location available")
         }
     }
 
