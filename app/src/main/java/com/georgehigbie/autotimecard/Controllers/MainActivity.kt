@@ -22,17 +22,7 @@ class MainActivity : AppCompatActivity() {
     private var testingLongText: TextView? = null
     private var testingLatText: TextView? = null
 
-    private val locationListener: LocationListener = object : LocationListener{
-        override fun onLocationChanged(location: Location?) {
-           testingText.text = "Longitude: ${location?.latitude} Latitude${location?.latitude}"
-            Log.d("Longitude: ", "${location?.longitude}")
-            Log.d("Latitude: ", "${location?.latitude}")
-        }
-        override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {} //not implemented
-        override fun onProviderEnabled(provider: String?) {} //not implemented
-        override fun onProviderDisabled(provider: String?) {} //not implemented
-    }
-
+    private var currentLocation: CurrentLocation? = null
 
 
 
@@ -40,7 +30,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        testingText = findViewById(R.id.testingText)
+        testingLongText = findViewById(R.id.testingLongText)
+        testingLatText = findViewById(R.id.testingLatText)
         setButtonVisibility()
         setOnClickListeners()
     }
