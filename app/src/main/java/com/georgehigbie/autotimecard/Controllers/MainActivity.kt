@@ -1,5 +1,6 @@
 package com.georgehigbie.autotimecard.Controllers
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.location.Location
@@ -7,7 +8,6 @@ import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.georgehigbie.autotimecard.R
@@ -16,14 +16,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private var locationManager: LocationManager? = null
+    private val locationListener: LocationListener? = null
     private var appSettings: SharedPreferences? = null
     private var locationSet: Boolean = false
     private var location: Location? = null
     private var testingLongText: TextView? = null
     private var testingLatText: TextView? = null
-
-    private var currentLocation: CurrentLocation? = null
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,13 +44,24 @@ class MainActivity : AppCompatActivity() {
 
 
     fun getLocation() { //This should be called by setLocationButton and changeLocationButton
-        locationManager = getSystemService(LOCATION_SERVICE) as LocationManager?
-        try {
-            locationManager?.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener)
-        }catch (ex: SecurityException){
-            Log.d("PROBLEM!!! :", "Security Exception, no location available")
+        locationManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager?
+        val locationListener = object : LocationListener{
+            override fun onLocationChanged(location: Location?) {
+                var longitudeString: String = (location!!.longitude).toString()
+                var latitudeString: String = (location!!.latitude).toString()
+                testingLongText!!.text = "Longitude: $longitudeString"
+                testingLatText!!.text = "Latitude: $latitudeString"
+            }
+
+            override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
+            override fun onProviderEnabled(provider: String?) {}
+            override fun onProviderDisabled(provider: String?) {}
         }
+
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener)
     }
+
+
 
     fun getLocationUpdates(){
 
