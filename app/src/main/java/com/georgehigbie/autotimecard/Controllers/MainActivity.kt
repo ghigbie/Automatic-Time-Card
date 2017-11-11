@@ -2,24 +2,34 @@ package com.georgehigbie.autotimecard.Controllers
 
 import android.content.Intent
 import android.content.SharedPreferences
+import android.location.Location
+import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.georgehigbie.autotimecard.R
-import com.google.android.gms.location.LocationRequest
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
     private var locationManager: LocationManager? = null
-    private var locationRequest: LocationRequest? = null
     private var appSettings: SharedPreferences? = null
     private var locationSet: Boolean = false
     private lateinit var testingText: TextView
-    private val UPDATE_INTERVAL: Long = 10 * 1000 //good idea for now
-    private val FASTEST_INTERVAL: Long = 2000 //good idea for now
+
+    private val locationListener: LocationListener = object : LocationListener{
+        override fun onLocationChanged(location: Location?) {
+           testingText.text = "Longitude: ${location?.latitude} Latitude${location?.latitude}"
+        }
+        override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {} //not implemented
+        override fun onProviderEnabled(provider: String?) {} //not implemented
+        override fun onProviderDisabled(provider: String?) {} //not implemented
+    }
+
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,9 +53,12 @@ class MainActivity : AppCompatActivity() {
 
 
     fun getLocation() { //This should be called by setLocationButton and changeLocationButton
-        locationRequest = LocationRequest()
-        locationRequest!!.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-
+        locationManager = getSystemService(LOCATION_SERVICE) as LocationManager?
+        try {
+            locationManager?.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener)
+        }catch (ex: SecurityException){
+            Log.d("TAG", "Security Exception, no location available")
+        }
     }
 
     fun getLocationUpdates(){
@@ -68,10 +81,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun MakeVolleyRequestForLocation(){
 
-
-
-    }
 }
 
