@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity() {
     private val locationListener: LocationListener = object : LocationListener{
         override fun onLocationChanged(location: Location?) {
            testingText.text = "Longitude: ${location?.latitude} Latitude${location?.latitude}"
+            Log.d("Longitude: ", "${location?.longitude}")
+            Log.d("Latitude: ", "${location?.latitude}")
         }
         override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {} //not implemented
         override fun onProviderEnabled(provider: String?) {} //not implemented
