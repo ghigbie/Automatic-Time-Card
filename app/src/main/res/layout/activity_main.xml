@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/testingText"
+        android:id="@+id/testingLongText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="@string/testingText"
@@ -56,6 +56,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/testingLatText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/testingText"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/testingLongText" />
 
 
     <Button

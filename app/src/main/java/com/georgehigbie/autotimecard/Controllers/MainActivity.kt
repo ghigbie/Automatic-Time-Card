@@ -18,7 +18,9 @@ class MainActivity : AppCompatActivity() {
     private var locationManager: LocationManager? = null
     private var appSettings: SharedPreferences? = null
     private var locationSet: Boolean = false
-    private lateinit var testingText: TextView
+    private var location: Location? = null
+    private var testingLongText: TextView? = null
+    private var testingLatText: TextView? = null
 
     private val locationListener: LocationListener = object : LocationListener{
         override fun onLocationChanged(location: Location?) {
@@ -39,10 +41,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         testingText = findViewById(R.id.testingText)
-
         setButtonVisibility()
         setOnClickListeners()
-
     }
 
     /*** This sets the visibility of the buttons if location is set or not set ***/
