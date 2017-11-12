@@ -14,7 +14,7 @@ import android.widget.TextView
 import com.georgehigbie.autotimecard.R
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     private var locationManager: LocationManager? = null
     private val locationListener: LocationListener? = null
