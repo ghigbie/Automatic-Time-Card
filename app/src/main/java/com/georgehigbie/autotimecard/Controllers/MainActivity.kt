@@ -1,5 +1,6 @@
 package com.georgehigbie.autotimecard.Controllers
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -43,6 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
+    @SuppressLint("MissingPermission")
     fun getLocation() { //This should be called by setLocationButton and changeLocationButton
         locationManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager?
         val locationListener = object : LocationListener{
@@ -57,8 +59,8 @@ class MainActivity : AppCompatActivity() {
             override fun onProviderEnabled(provider: String?) {}
             override fun onProviderDisabled(provider: String?) {}
         }
+        locationManager?.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener) //safe check supression
 
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener)
     }
 
 
