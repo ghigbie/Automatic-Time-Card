@@ -1,14 +1,18 @@
 package com.georgehigbie.autotimecard.Controllers
 
+import android.Manifest.permission.ACCESS_FINE_LOCATION
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.georgehigbie.autotimecard.R
+import io.vrinda.kotlinpermissions.PermissionCallBack
 import io.vrinda.kotlinpermissions.PermissionsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -17,7 +21,6 @@ class MainActivity : PermissionsActivity(){
    // private lateinit var fusedLocationClient: FusedLocationProviderClient
     private var locationManager: LocationManager? = null
 
-    private val locationListener: LocationListener? = null
     private var appSettings: SharedPreferences? = null
     private var locationSet: Boolean = false
     private var location: Location? = null
@@ -65,10 +68,36 @@ class MainActivity : PermissionsActivity(){
 //    }
 
     fun getLocation(){
+        requestPermissions(ACCESS_FINE_LOCATION, object : PermissionCallBack{
+            override fun permissionGranted() {
+                super.permissionGranted()
+                Log.v("ACCESS_FINE_LOCATION", "GRANTED!!!")
+                locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
+                try{
+                    locationManager?.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0L, 0f, locationListener)
+                }catch(ex: SecurityException){
+                    Log.d("EXEC: ",  "Security Exception, no location available")
+                }
 
+            }
+
+            override fun permissionDenied() {
+                super.permissionDenied()
+                Log.v("ACCESS_FINE_LOCATION", "DENIED!!!")
+            }
+        })
     }
 
+    private val locationListener: LocationListener = object : LocationListener {
+        override fun onLocationChanged(location: Location) {
+            testingLongText?.text = location.longitude.toString()
+            testingLatText?.text = location.latitude.toString()
+        }
 
+        override fun onStatusChanged(provider: String, status: Int, extras: Bundle) {}
+        override fun onProviderEnabled(provider: String) {}
+        override fun onProviderDisabled(provider: String) {}
+    }
 
     //sets all onclick listeners for activity
     fun setOnClickListeners(){
